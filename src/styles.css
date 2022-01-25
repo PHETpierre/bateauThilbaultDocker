@@ -1,0 +1,35 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@ng-select/ng-select/themes/default.theme.css";
+.footer {
+
+    height:48px;
+    width: 100%;
+    background-image: url("assets/vagueTest.jpg");
+    background-size: 100% auto;
+    background-repeat: repeat;
+    background-attachment: scroll;
+    background-position: 0% 0%;
+    position: fixed;
+    bottom: 0pt;
+    left: 0pt;
+
+}
+
+.bg-img{
+    background-image: url("assets/poissons.jpg");
+    background-repeat: no-repeat;
+    height:20em; background-size:cover; width:auto;
+    background-position:50% 50%;
+}
+
+.bg-blue-sea{
+    background-color: #5790E3;
+}
+
+.footer_contents {
+
+    height:24px;
+    width: 1000px;
+    margin:auto;
+
+}

@@ -1,0 +1,55 @@
+<div class="p-5 mb-4 bg-img">
+  <div class="container-fluid py-5">
+    <h1 class="display-5">Tableau de Bord de votre business</h1>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="card border-info  mb-5">
+    <h5 class="card-header">Vos informations </h5>
+    <div class="card-body">
+      <h6>Votre Chiffre d'affaire:
+        <div class="badge bg-primary text-wrap">
+          {{ CA }} €
+        </div>
+      </h6>
+      <h6>Votre Résultat comptable :
+        <div class="badge bg-primary text-wrap">
+          {{ resultComptable }} €
+        </div>
+      </h6>
+    </div>
+  </div>
+
+  <div class="row">
+
+    <div class="col-md-6">
+      <div class="card border-info mb-3">
+        <div class="card-header">Vente des produits (catégories/prix €)</div>
+        <div class="card-body">
+          <div class="chart-wrapper">
+            <canvas baseChart [datasets]="barChartData2" [labels]="barChartLabels" [options]="barChartOptions"
+              [plugins]="barChartPlugins" [legend]="barChartLegend">
+            </canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="card border-info mb-3">
+        <div class="card-header">Vente des produits (catégories/quantité) </div>
+        <div class="card-body">
+          <div class="chart-wrapper">
+            <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions"
+              [plugins]="barChartPlugins" [legend]="barChartLegend">
+            </canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>

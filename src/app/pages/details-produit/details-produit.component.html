@@ -1,0 +1,53 @@
+<div class="p-5 mb-4 bg-img">
+    <div class="container-fluid py-5">
+      <h1 class="display-5">Page d'affichage des details du produit</h1>
+    </div>
+  </div>
+
+<div class="container">
+
+    <!-- <input type="text" name="" value="" (input)="suggest()"> -->
+
+    <!-- <ng-select [(ngModel)]="selectedid" (change)="updateId()">
+       <ng-option *ngFor="let produit of listeProduits" [value]="produit.id">{{produit.name}}</ng-option>
+    </ng-select> -->
+
+    <ng-select [items]="listeProduits"
+               bindLabel="name"
+               bindValue="id"
+               [(ngModel)]="selectedId"
+               (change)="updateId()">
+    </ng-select>
+
+    <div style="text-align:center" class="bg-light border rounded-3">
+        <div>Poisson details</div>
+        <div>nom: {{ selectedProduit.name }}</div>
+        <div>
+            prix: {{ selectedProduit.price }}
+            <i class="fas fa-euro-sign"></i>
+        </div>
+        <div>quantite: {{ selectedProduit.inStock }}</div>
+        <div>promotion: {{ selectedProduit.sale }}</div>
+        <div>taux de promotion : {{ selectedProduit.discount }}</div>
+        <div>prix en promotion: {{ selectedProduit.price_on_sale }}</div>
+        <!-- <div>quantite vendu: {{ selectedProduit.quantity_sold }}</div> -->
+        <div>commentaire: {{ selectedProduit.comments }}</div>
+    </div>
+    <div class="bg-light p-1 mt-1 rounded-3">
+        <div style="text-align:center" class="bg-light p-1">
+            <div>Modifier quantité</div>
+            <input type="number" min=0 class="col-sm-4" name="inputQuantity" [(ngModel)]="selectedProduit.quantity">
+            <div class="col-sm-12">
+                <button type="button" class="btn btn-primary m-1" (click)="addProduct()">Ajouter</button>
+                <button type="button" class="btn btn-danger m-1" (click)="removeProduct()">Retirer</button>
+            </div>
+        </div>
+        <div style="text-align:center" class="bg-light">
+            <div>Modifier promotion</div>
+            <input type="number" min=0 class="col-sm-4" name="inputDiscount" [(ngModel)]="selectedProduit.discount">
+            <div class="col-sm-12">
+                <button type="button" class="btn btn-primary m-1" (click)="modifyPromotion()">Modifier</button>
+            </div>
+        </div>
+    </div>
+</div>

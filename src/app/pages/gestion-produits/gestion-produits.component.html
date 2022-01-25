@@ -1,0 +1,110 @@
+<div class="p-5 mb-4 bg-img">
+    <div class="container-fluid py-5">
+        <h1 class="display-5">Modification Simultanée de produits</h1>
+    </div>
+</div>
+
+<div class="container">
+
+    <button type="button" class="btn btn-primary" (click)="addProductStock()">Envoyer données</button><hr>
+
+
+    <h3>Crustacés</h3>
+    <table class="table table-bordered">
+        <thead class="table-dark">
+            <tr>
+                <th scope="col">Nom</th>
+                <th scope="col">Prix</th>
+                <th scope="col">Quantité</th>
+                <th scope="col">Promo</th>
+                <th scope="col">Commentaires</th>
+                <th scope="col">Ajouter/retirer stock</th>
+                <th scope="col">Ajout promo</th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let crustace of listeCrustaces">
+            <tr>
+                <td scope="row">{{ crustace.name }}</td>
+                <td>{{ crustace.price }}</td>
+                <td>{{ crustace.inStock }}</td>
+                <td>{{ crustace.sale }}</td>
+                <td>{{ crustace.comments }}</td>
+                <td><input type="number" class="form-control" id="{{ crustace.id }}" [(ngModel)]="crustace.quantity"></td>
+                <td><input type="number" class="form-control" id="{{ crustace.id }}" [(ngModel)]="crustace.discount"></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <hr>
+
+    <h3>Poissons</h3>
+    <table class="table table-bordered">
+        <thead class="table-dark">
+            <tr>
+                <th scope="col">Nom</th>
+                <th scope="col">Prix</th>
+                <th scope="col">Quantité</th>
+                <th scope="col">Promo</th>
+                <th scope="col">Commentaires</th>
+                <th scope="col">Ajouter/retirer stock</th>
+                <th scope="col">Ajout promo</th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let poisson of listePoissons">
+            <tr>
+                <td scope="row">{{ poisson.name }}</td>
+                <td>{{ poisson.price }}</td>
+                <td>{{ poisson.inStock }}</td>
+                <td>{{ poisson.sale }}</td>
+                <td>{{ poisson.comments }}</td>
+                <td><input type="number" class="form-control" id="{{ poisson.id }}" [(ngModel)]="poisson.quantity" ></td>
+                <td><input type="number" class="form-control" id="{{ poisson.id }}" [(ngModel)]="poisson.discount"></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <hr>
+
+    <h3>Fruit de mer</h3>
+    <table class="table table-bordered">
+        <thead class="table-dark">
+            <tr>
+                <th scope="col">Nom</th>
+                <th scope="col">Prix</th>
+                <th scope="col">Quantité</th>
+                <th scope="col">Promo</th>
+                <th scope="col">Commentaires</th>
+                <th scope="col">Ajout stock</th>
+                <th scope="col">Ajout promo</th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let fruitDeMer of listeFruitsDeMer">
+            <tr>
+                <td scope="row">{{ fruitDeMer.name }}</td>
+                <td>{{ fruitDeMer.price }}</td>
+                <td>{{ fruitDeMer.inStock }}</td>
+                <td>{{ fruitDeMer.sale }}</td>
+                <td>{{ fruitDeMer.comments }}</td>
+                <td><input type="number" class="form-control" id="{{ fruitDeMer.id }}" [(ngModel)]="fruitDeMer.quantity"></td>
+                <td><input type="number" class="form-control" id="{{ fruitDeMer.id }}" [(ngModel)]="fruitDeMer.discount"></td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>
+
+<!--
+
+
+    availability: true
+category: 1
+comments: ""
+discount: 5
+id: 6
+inStock: 2
+name: "Moules de pêche"
+owner: "tig"
+price: 7
+sale: true
+unit: "kg"
+-->
